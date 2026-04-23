@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="INTELLARA — A student web development team building modern, responsive websites. Meet our talented developers and explore our portfolio of projects." />
+  <title>INTELLARA — Student Team Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+      animation: slideInDown 0.8s ease-out;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: float 20s linear infinite;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero .profile-img {
+      border-radius: 50%;
+      border: 5px solid white;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      animation: pulse 3s ease-in-out infinite;
+      max-width: 150px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin: 20px 0;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .hero .lead {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      opacity: 0.95;
+    }
+
+    /* Statistics Section */
+    .stats-section {
+      background: white;
+      padding: 60px 0;
+      border-top: 1px solid #eee;
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: 30px 20px;
+      transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #667eea;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      color: #666;
+      margin-top: 10px;
+    }
+
+    /* Team Preview Section */
+    .team-section {
+      background: #f8f9fa;
+      padding: 80px 0;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 60px;
+      color: #333;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      border-radius: 2px;
+    }
+
+    .team-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      text-align: center;
+      padding: 30px;
+      margin-bottom: 30px;
+      animation: slideInUp 0.6s ease-out;
+    }
+
+    .team-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    }
+
+    .team-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 20px;
+      border: 4px solid #667eea;
+    }
+
+    .team-card h5 {
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .team-card p {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+
+    .team-card a {
+      display: inline-block;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .team-card a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    /* Features Section */
+    .features-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 80px 0;
+    }
+
+    .feature-item {
+      text-align: center;
+      padding: 30px;
+      margin-bottom: 20px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .feature-item:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-5px);
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: white;
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 15px 40px;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .cta-btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .cta-btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+      color: white;
+      text-decoration: none;
+    }
+
+    .cta-btn-secondary {
+      background: white;
+      color: #667eea;
+      border: 2px solid #667eea;
+    }
+
+    .cta-btn-secondary:hover {
+      background: #667eea;
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: #fff;
+      padding: 40px 0 20px;
+      text-align: center;
+    }
+
+    footer a {
+      color: #667eea;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: all 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #764ba2;
+    }
+
+    .social-links {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+    }
+
+    /* Projects Section */
+    .projects-section {
+      background: #f8f9fa;
+      padding: 80px 0;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      animation: slideInUp 0.6s ease-out;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    }
+
+    .project-image {
+      width: 100%;
+      height: 250px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: white;
+    }
+
+    .project-content {
+      padding: 25px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card h5 {
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      color: #666;
+      font-size: 0.95rem;
+      flex-grow: 1;
+      margin-bottom: 15px;
+    }
+
+    .project-tag {
+      display: inline-block;
+      background: #e8e8ff;
+      color: #667eea;
+      padding: 5px 12px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      margin-right: 8px;
+      margin-bottom: 15px;
+    }
+
+    /* Tech Stack Section */
+    .tech-section {
+      background: white;
+      padding: 80px 0;
+    }
+
+    .tech-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .tech-item {
+      text-align: center;
+      padding: 25px 20px;
+      min-width: 140px;
+      background: #f8f9fa;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+      border: 1px solid #eee;
+    }
+
+    .tech-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(102, 126, 234, 0.15);
+      border-color: #667eea;
+    }
+
+    .tech-item .tech-icon {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .tech-item .tech-name {
+      font-weight: 700;
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    /* Enhanced Footer */
+    footer {
+      background: #1a1a2e;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      text-align: left;
+      margin-bottom: 30px;
+    }
+
+    .footer-brand p {
+      color: #999;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-top: 12px;
+    }
+
+    .footer-col h5 {
+      color: #667eea;
+      font-weight: 700;
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-col ul li a {
+      color: #999;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .footer-col ul li a:hover {
+      color: #667eea;
+      padding-left: 5px;
+    }
+
+    .footer-divider {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .footer-divider p {
+      margin: 0;
+      color: #666;
+      font-size: 0.85rem;
+    }
+
+    /* Highlights / Trust Bar */
+    .trust-bar {
+      background: white;
+      padding: 40px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .trust-items {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #666;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .trust-item span {
+      font-size: 1.3rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+
+      .cta-btn {
+        width: 100%;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .tech-item {
+        min-width: 110px;
+      }
+
+      .trust-items {
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+
+      <a class="navbar-brand" href="index.html">
+        <img src="logo.png" alt="INTELLARA Logo" class="navbar-logo">
+        <strong>INTELLARA</strong>
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container hero-content">
+      <div class="hero-logo">
+        <div style="font-size: 3rem; font-weight: 900; background: linear-gradient(135deg, #fff, #e0e0e0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: 2px;">IN</div>
+        <div style="font-size: 0.8rem; font-weight: bold; letter-spacing: 3px; margin-top: -5px;">TELLARA</div>
+      </div>
+      <h1 style="margin-top: 20px;">INTELLARA</h1>
+      <p class="lead">Web Development & Design Team</p>
+      <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto 15px;">Our talented team of four collaborates to create dynamic, responsive, and user-friendly web solutions using modern technologies and best practices.</p>
+      <p style="font-size: 0.95rem; max-width: 650px; margin: 0 auto 30px; opacity: 0.85;">🚀 HTML5 &bull; CSS3 &bull; JavaScript &bull; React &bull; Node.js &bull; MongoDB &bull; Bootstrap &bull; Figma</p>
+      <div class="cta-buttons" style="justify-content: center; gap: 15px;">
+        <a href="portfolio.html" class="cta-btn cta-btn-primary">View Our Work</a>
+        <a href="contact.html" class="cta-btn cta-btn-secondary">Get In Touch</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Trust Bar -->
+  <section class="trust-bar">
+    <div class="container">
+      <div class="trust-items">
+        <div class="trust-item"><span>🎓</span> Student-Built</div>
+        <div class="trust-item"><span>📱</span> Fully Responsive</div>
+        <div class="trust-item"><span>⚡</span> Fast & Optimized</div>
+        <div class="trust-item"><span>🔒</span> Secure & Reliable</div>
+        <div class="trust-item"><span>🎨</span> Modern UI/UX</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 stat-card">
+          <span class="stat-number">4</span>
+          <span class="stat-label">Team Members</span>
+        </div>
+        <div class="col-md-3 col-sm-6 stat-card">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Projects Completed</span>
+        </div>
+        <div class="col-md-3 col-sm-6 stat-card">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Client Satisfaction</span>
+        </div>
+        <div class="col-md-3 col-sm-6 stat-card">
+          <span class="stat-number">2+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Preview Section -->
+  <section class="team-section">
+    <div class="container">
+      <h2 class="section-title">Meet Our Team</h2>
+      <div style="margin-top: 60px;">
+        <div class="row">
+          <div class="col-md-6 col-lg-3">
+            <div class="team-card">
+              <img src="https://i.ibb.co/cXT4sctR/images.png" alt="Hemavathi S">
+              <h5>Hemavathi S</h5>
+              <p style="font-size: 0.9rem; color: #667eea; font-weight: 600;">Project Manager</p>
+              <a href="hemavathi.html">View Profile</a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="team-card">
+              <img src="https://i.ibb.co/DH410Gww/download.png" alt="Meghana P">
+              <h5>Meghana P</h5>
+              <p style="font-size: 0.9rem; color: #667eea; font-weight: 600;">Frontend Developer</p>
+              <a href="meghana.html">View Profile</a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="team-card">
+              <img src="https://i.ibb.co/nssT2HpF/download.jpg" alt="Sneha J">
+              <h5>Sneha J</h5>
+              <p style="font-size: 0.9rem; color: #667eea; font-weight: 600;">Backend Developer</p>
+              <a href="sneha.html">View Profile</a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="team-card">
+              <img src="https://i.ibb.co/h18bb9pG/images-1.png" alt="Likitha R">
+              <h5>Likitha R</h5>
+              <p style="font-size: 0.9rem; color: #667eea; font-weight: 600;">Full Stack Developer</p>
+              <a href="likitha.html">View Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="container">
+      <h2 class="section-title" style="color: white; margin-bottom: 60px;">What We Offer</h2>
+      <div class="row">
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-item">
+            <div class="feature-icon">💻</div>
+            <h5 style="margin-bottom: 10px;">Web Development</h5>
+            <p style="margin: 0; font-size: 0.95rem;">Modern, responsive websites built with latest technologies</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-item">
+            <div class="feature-icon">🎨</div>
+            <h5 style="margin-bottom: 10px;">UI/UX Design</h5>
+            <p style="margin: 0; font-size: 0.95rem;">Beautiful, user-centric interfaces that convert</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-item">
+            <div class="feature-icon">⚡</div>
+            <h5 style="margin-bottom: 10px;">Performance</h5>
+            <p style="margin: 0; font-size: 0.95rem;">Fast-loading, optimized solutions for better UX</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-item">
+            <div class="feature-icon">🔒</div>
+            <h5 style="margin-bottom: 10px;">Security</h5>
+            <p style="margin: 0; font-size: 0.95rem;">Secure, reliable applications you can trust</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section class="tech-section">
+    <div class="container">
+      <h2 class="section-title">Our Tech Stack</h2>
+      <div class="tech-grid">
+        <div class="tech-item">
+          <span class="tech-icon">🌐</span>
+          <span class="tech-name">HTML5</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-icon">🎨</span>
+          <span class="tech-name">CSS3</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-icon">⚡</span>
+          <span class="tech-name">JavaScript</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-icon">⚛️</span>
+          <span class="tech-name">React</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-icon">🟢</span>
+          <span class="tech-name">Node.js</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-icon">🍃</span>
+          <span class="tech-name">MongoDB</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-icon">🐍</span>
+          <span class="tech-name">Python</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-icon">🅱️</span>
+          <span class="tech-name">Bootstrap</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-icon">📐</span>
+          <span class="tech-name">Figma</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-icon">🗄️</span>
+          <span class="tech-name">SQL</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects Section -->
+  <section class="projects-section">
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+      <div style="margin-top: 60px;">
+        <div class="row">
+          <div class="col-md-6 col-lg-4">
+            <div class="project-card">
+              <div class="project-image">📱</div>
+              <div class="project-content">
+                <h5>E-Commerce Platform</h5>
+                <div>
+                  <span class="project-tag">React</span>
+                  <span class="project-tag">Node.js</span>
+                  <span class="project-tag">MongoDB</span>
+                </div>
+                <p>A full-stack e-commerce solution with real-time inventory management and payment integration.</p>
+                <a href="#" style="color: #667eea; font-weight: 600; text-decoration: none;">View Project →</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="project-card">
+              <div class="project-image">🎨</div>
+              <div class="project-content">
+                <h5>Design System</h5>
+                <div>
+                  <span class="project-tag">Figma</span>
+                  <span class="project-tag">UI/UX</span>
+                </div>
+                <p>Comprehensive design system with 100+ reusable components for consistent product design.</p>
+                <a href="#" style="color: #667eea; font-weight: 600; text-decoration: none;">View Project →</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="project-card">
+              <div class="project-image">🚀</div>
+              <div class="project-content">
+                <h5>Task Management App</h5>
+                <div>
+                  <span class="project-tag">Vue.js</span>
+                  <span class="project-tag">Firebase</span>
+                </div>
+                <p>Real-time collaborative task management application with smooth interactions and notifications.</p>
+                <a href="#" style="color: #667eea; font-weight: 600; text-decoration: none;">View Project →</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="project-card">
+              <div class="project-image">📊</div>
+              <div class="project-content">
+                <h5>Inventory Management System</h5>
+                <div>
+                  <span class="project-tag">Node.js</span>
+                  <span class="project-tag">SQL</span>
+                  <span class="project-tag">REST API</span>
+                </div>
+                <p>Full-featured backend system for retail inventory with real-time reporting and analytics.</p>
+                <a href="#" style="color: #667eea; font-weight: 600; text-decoration: none;">View Project →</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="project-card">
+              <div class="project-image">🎓</div>
+              <div class="project-content">
+                <h5>E-Learning Platform</h5>
+                <div>
+                  <span class="project-tag">MERN Stack</span>
+                  <span class="project-tag">JWT Auth</span>
+                </div>
+                <p>MERN stack platform with video streaming, secure authentication, and progress tracking.</p>
+                <a href="#" style="color: #667eea; font-weight: 600; text-decoration: none;">View Project →</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="project-card">
+              <div class="project-image">👥</div>
+              <div class="project-content">
+                <h5>INTELLARA Team Portfolio</h5>
+                <div>
+                  <span class="project-tag">HTML5</span>
+                  <span class="project-tag">CSS3</span>
+                  <span class="project-tag">Bootstrap</span>
+                </div>
+                <p>This responsive multi-page team portfolio with animated UI, profile pages, and contact form.</p>
+                <a href="portfolio.html" style="color: #667eea; font-weight: 600; text-decoration: none;">View Project →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container" style="padding: 50px 0 20px;">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4 style="color: white; font-weight: 800; margin-bottom: 0;">INTELLARA</h4>
+          <p>A passionate student web development team dedicated to building modern, responsive, and user-friendly digital solutions.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Team</h5>
+          <ul>
+            <li><a href="meghana.html">Meghana P</a></li>
+            <li><a href="sneha.html">Sneha J</a></li>
+            <li><a href="likitha.html">Likitha R</a></li>
+            <li><a href="hemavathi.html">Hemavathi S</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Connect</h5>
+          <ul>
+            <li><a href="https://github.com" target="_blank">GitHub</a></li>
+            <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+            <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+            <li><a href="contact.html">Email Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-divider">
+        <p>&copy; 2026 
+          <img src="logo.png" alt="Logo" style="height: 18px; vertical-align: middle; margin-right: 5px; border-radius: 3px; filter: brightness(0) invert(1);">
+          INTELLARA. All rights reserved.</p>
+        <p>Designed & Developed with ❤️ by INTELLARA</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Add animation on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.animation = 'slideInUp 0.6s ease-out';
+        }
+      });
+    });
+
+    document.querySelectorAll('.team-card, .feature-item, .stat-card, .project-card, .tech-item, .why-item, .process-item, .testimonial-card').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
