@@ -11,7 +11,7 @@
 
 ## 🌐 Live Demo
 
-[View Live Site](#) _(Replace with your deployed GitHub Pages / Netlify URL)_
+[View Live Site](#) _(https://snehasanu64.github.io/Intellara-team-portfolio/)_
 
 ---
 
@@ -79,15 +79,6 @@
    ```
    Or simply double-click `index.html` to view in your default browser.
 
-3. **Deploy** (optional):
-   - Push to GitHub and enable **GitHub Pages** from Settings → Pages → Source: `main` branch
-   - Or deploy to [Netlify](https://netlify.com) / [Vercel](https://vercel.com) with drag-and-drop
-
----
-
-## 📸 Screenshots
-
-> Add screenshots of your website here after deployment for a polished GitHub README.
 
 ---
 
