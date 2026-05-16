@@ -1,5 +1,5 @@
  
-# 💼 INTELLARA — Team Portfolio
+# INTELLARA — Team Portfolio
  
 A multi-page responsive portfolio website for **INTELLARA**, a student web development team of four.
 Showcases each member's profile, skills, and the team's collective work.
