@@ -1,87 +1,41 @@
-# INTELLARA — Student Team Portfolio
-
-> A responsive, modern team portfolio website built with HTML, CSS, JavaScript, and Bootstrap 5. Showcases the skills, experience, and projects of four talented student developers.
-
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
-![Bootstrap](https://img.shields.io/badge/Bootstrap_5-7952B3?style=flat&logo=bootstrap&logoColor=white)
-
----
-
-## 🌐 Live Demo
-
-[View Live Site](#) _(https://snehasanu64.github.io/Intellara-team-portfolio/)_
-
----
-
-## 👥 Team Members
-
-| Name | Role | Profile |
-|------|------|---------|
-| **Meghana P** | Frontend Developer | [View](meghana.html) |
-| **Sneha J** | Backend Developer | [View](sneha.html) |
-| **Likitha R** | Full Stack Developer | [View](likitha.html) |
-| **Hemavathi S** | Project Manager | [View](hemavathi.html) |
-
----
-
+ 
+# 💼 INTELLARA — Team Portfolio
+ 
+A multi-page responsive portfolio website for **INTELLARA**, a student web development team of four.
+Showcases each member's profile, skills, and the team's collective work.
+ 
 ## ✨ Features
-
-- **Modern, Responsive Design** — Gradient themes, glassmorphism cards, and smooth animations
-- **Individual Profile Pages** — Resume-style layouts with skills, experience, projects & certifications
-- **Interactive Contact Form** — Real-time field validation with animated feedback
-- **Scroll Animations** — Staggered reveal using Intersection Observer API
-- **Mobile-First** — Fully responsive across all screen sizes
-- **SEO Optimized** — Proper meta descriptions, semantic HTML, and heading hierarchy
-
----
-
-## 🛠️ Tech Stack
-
-| Technology | Usage |
-|------------|-------|
-| HTML5 | Semantic structure & content |
-| CSS3 | Custom styling, gradients, animations |
-| JavaScript (ES6+) | Form validation, scroll reveals, interactivity |
-| Bootstrap 5 | Grid system, responsive navbar, utility classes |
-
----
-
-## 📁 Project Structure
-
+ 
+- Individual profile pages for all 4 team members
+- Projects portfolio section
+- Contact page
+- Animated UI with modern design
+- Fully responsive layout
+## 🛠️ Built With
+ 
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+ 
+## 🚀 Live Demo
+ 
+👉 [View Live Site](https://snehasanu64.github.io/Intellara-team-portfolio/)
+ 
+## 👥 Team
+ 
+| Name | Role |
+|------|------|
+| Hemavathi S | Project Manager |
+| Meghana P | Frontend Developer |
+| Sneha J | Backend Developer |
+| Likitha R | Full Stack Developer |
+ 
+## 📁 Run Locally
+ 
+```bash
+git clone https://github.com/snehasanu64/Intellara-team-portfolio.git
 ```
-├── index.html          # Home page — hero, team preview, features, testimonials
-├── portfolio.html      # Team portfolio — core expertise, featured projects (EduTrack, SwiftServe)
-├── contact.html        # Contact form with validation & social links
-├── styles.css          # Shared global stylesheet
-├── logo.png            # Official team logo
-├── meghana.html        # Meghana P — Frontend Developer profile
-├── sneha.html          # Sneha J — Backend Developer profile
-├── likitha.html        # Likitha R — Full Stack Developer profile
-├── hemavathi.html      # Hemavathi S — Project Manager profile
-└── README.md           # Project documentation
-```
-
+Open `index.html` in your browser.
+ 
 ---
-
-## 🚀 Getting Started
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/your-username/intellara-team-portfolio.git
-   ```
-
-2. **Open in browser:**
-   ```bash
-   cd intellara-team-portfolio
-   open index.html
-   ```
-   Or simply double-click `index.html` to view in your default browser.
-
-
----
-
-## 📄 License
-
-© 2026 INTELLARA Team. All rights reserved.
+Built by [INTELLARA Team](https://github.com/snehasanu64)
